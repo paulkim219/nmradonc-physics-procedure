@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en" ng-app="radOncAIApp">
+<head>
+  <meta charset="utf-8">
+  <title>RadOncAI - Agentic AI for Radiation Oncology</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Revolutionary Agentic AI system helping patients, doctors, nurses, and students with Radiation Oncology needs">
+  
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body ng-controller="ExamController as vm">
+
+  {% include 'components/navbar.html' %}
+
+  <!-- Hero Section -->
+  <section class="landing-hero">
+    <div class="container">
+      <h1>RadOncAI</h1>
+      <p class="subtitle">Revolutionary Agentic AI System for Radiation Oncology</p>
+      <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto 2rem; opacity: 0.95;">
+        Empowering patients, doctors, nurses, and students with intelligent AI assistance 
+        for all Radiation Oncology needs. Get instant, accurate answers and support throughout 
+        your radiation oncology journey.
+      </p>
+      <div class="cta-buttons">
+        <a href="{{ url_for('physicsprocedure') }}" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.85rem 2rem;">
+          Get Started
+        </a>
+        <a href="{{ url_for('aimodel') }}" class="btn secondary" style="font-size: 1.1rem; padding: 0.85rem 2rem;">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="landing-section">
+    <h2>Built for Everyone in Radiation Oncology</h2>
+    <div class="features-grid">
+      
+      <!-- Patients Feature -->
+      <div class="feature-card">
+        <span class="icon">👤</span>
+        <h3>For Patients</h3>
+        <p>Get personalized care for any of your radiation oncology questions.</p>
+        <ul>
+          <li>Understand treatment plans and side effects</li>
+          <li>Get answers about radiation therapy</li>
+          <li>Schedule appointments with your doctor</li>
+          <li>24/7 support and guidance</li>
+        </ul>
+      </div>
+
+      <!-- Students Feature -->
+      <div class="feature-card">
+        <span class="icon">🎓</span>
+        <h3>For Trainees</h3>
+        <p>Master Radiation Oncology with interactive learning and exam preparation.</p>
+        <ul>
+          <li>Interactive case studies</li>
+          <li>Oral board exam practice</li>
+          <li>Real-time feedback and scoring</li>
+          <li>Comprehensive learning resources</li>
+        </ul>
+      </div>
+
+      <!-- Physicians Feature -->
+      <div class="feature-card">
+        <span class="icon">👨‍⚕️</span>
+        <h3>For Physicians</h3>
+        <p>Get guidelines and predictions for any Radiation Oncology trial.</p>
+        <ul>
+          <li>Guidelines and predictions for any Radiation Oncology trial</li>
+          <li>Real-time feedback and scoring</li>
+          <li>Comprehensive learning resources</li>
+          <li>Care coordination support</li>
+        </ul>
+      </div>
+
+      <!-- Doctors Feature -->
+      <div class="feature-card">
+        <span class="icon">👨‍⚕️</span>
+        <h3>For Doctors</h3>
+        <p>Enhance clinical decision-making with AI-powered insights and recommendations.</p>
+        <ul>
+          <li>Treatment planning assistance</li>
+          <li>Evidence-based recommendations</li>
+          <li>Case analysis and review</li>
+          <li>Clinical decision support</li>
+        </ul>
+      </div>
+
+      <!-- Nurses Feature -->
+      <div class="feature-card">
+        <span class="icon">👩‍⚕️</span>
+        <h3>For Nurses</h3>
+        <p>Access comprehensive resources to support patient care and education.</p>
+        <ul>
+          <li>Patient care protocols</li>
+          <li>Side effect management guidance</li>
+          <li>Educational resources</li>
+          <li>Care coordination support</li>
+        </ul>
+      </div>
+
+      
+
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <h2 style="color: #4E2A84;">Why Choose RadOncAI?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-icon">🤖</div>
+        <h4>Agentic AI Technology</h4>
+        <p>Advanced AI that actively assists and learns to provide better support over time</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">⚡</div>
+        <h4>Instant Responses</h4>
+        <p>Get accurate answers and support in real-time, whenever you need it</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🎯</div>
+        <h4>Evidence-Based</h4>
+        <p>All recommendations are based on current medical literature and best practices</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🔒</div>
+        <h4>Secure & Private</h4>
+        <p>Your data is protected with enterprise-grade security and privacy measures</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">📚</div>
+        <h4>Comprehensive</h4>
+        <p>Covering all aspects of Radiation Oncology from diagnosis to follow-up care</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">🌐</div>
+        <h4>Accessible</h4>
+        <p>Available 24/7 from any device, making expert knowledge accessible to all</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <h2>Ready to Transform Radiation Oncology Care?</h2>
+    <p>Join patients, healthcare professionals, and students who are already benefiting from RadOncAI</p>
+    <div class="cta-buttons">
+      <a href="{{ url_for('physicsprocedure') }}" class="btn" style="background: #fff; color: #4E2A84; font-size: 1.1rem; padding: 0.85rem 2rem;">
+        Try It Now
+      </a>
+      <a href="{{ url_for('aboutus') }}" class="btn secondary" style="font-size: 1.1rem; padding: 0.85rem 2rem;">
+        About Us
+      </a>
+    </div>
+  </section>
+
+  {% include 'components/chat-widget.html' %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+  
+  <script src="{{ url_for('static', filename='config.js') }}"></script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>

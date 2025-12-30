@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" ng-app="radOncAIApp">
+<head>
+  <meta charset="utf-8">
+  <title>About - RadOncAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  
+  <style>
+      /* --- Shared Styles --- */
+      body { padding-top: 70px; color: #333; }
+      .navbar-brand { font-weight: bold; }
+
+      /* --- About Page Specific Styles --- */
+      .hero-section {
+          background-color: #f8f9fa;
+          padding: 40px 0;
+          margin-bottom: 40px;
+          border-bottom: 1px solid #e7e7e7;
+          text-align: center;
+      }
+      .hero-section h1 { margin-top: 0; color: #2c3e50; }
+      .hero-section .lead { color: #7f8c8d; }
+
+      .team-member { text-align: center; margin-bottom: 30px; }
+      .team-member img { 
+          width: 240px; 
+          height: 240px; 
+          margin-bottom: 15px; 
+          border: 3px solid #eee;
+
+          object-fit: cover; 
+          object-position: center top;
+      }
+      .team-member h4 { margin-bottom: 5px; font-weight: bold; }
+      .team-member .text-muted { font-size: 0.9em; }
+
+      .tech-stack {
+          background: #f0f4f8;
+          padding: 30px;
+          border-radius: 8px;
+          margin-top: 20px;
+      }
+  </style>
+</head>
+
+<body ng-controller="ExamController as vm">
+
+  {% include 'components/navbar.html' %}
+
+  <div class="hero-section">
+      <div class="container">
+          <h1>Bridging AI & Oncology</h1>
+          <p class="lead">A Northwestern University Practicum Project</p>
+      </div>
+  </div>
+
+  <div class="container">
+      
+      <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+              <h3>Our Mission</h3>
+              <p>
+                  RadOncAI is designed to help Radiation Oncology residents prepare for their oral board examinations. 
+                  By simulating realistic case discussions, we provide a safe, low-stakes environment for trainees to practice 
+                  their diagnostic reasoning and management planning.
+              </p>
+              <hr>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-6">
+              <h3>How It Works</h3>
+              <p>
+                  This application utilizes a <strong>Retrieval-Augmented Generation (RAG)</strong> architecture. 
+                  Unlike standard chatbots, our system retrieves context from verified Radiation Oncology guidelines 
+                  before generating an examiner response.
+              </p>
+              <ul>
+                  <li><strong>Frontend:</strong> AngularJS & Bootstrap</li>
+                  <li><strong>Backend:</strong> Node.js & Express</li>
+                  <li><strong>AI Model:</strong> OpenAI OSS, Llama 3.2 70B</li>
+              </ul>
+          </div>
+          <div class="col-md-6">
+              <div class="tech-stack">
+                  <h4><i class="glyphicon glyphicon-console"></i> Under the Hood</h4>
+                  <p>
+                      When you submit an answer, the system analyzes your response against NCCN guidelines 
+                      and generates a follow-up question tailored to your specific management plan, 
+                      mimicking a real examiner's adaptability.
+                  </p>
+              </div>
+          </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+          <div class="col-xs-12 text-center">
+              <h3>The Team</h3>
+              <br>
+          </div>
+
+          <div class="col-sm-4 col-sm-offset-2 team-member">
+              <img src="{{ url_for('static', filename='images/seonghoo.jpg') }}" class="img-circle" alt="Seonghoo">
+              <h4>Seonghoo (Paul) Kim</h4>
+              <p class="text-muted">MS Machine Learning and Data Science Student<br>Northwestern University</p>
+              <p>Former Quality Development Engineer at InterSystems with a passion for healthcare technology.</p>
+          </div>
+
+          <div class="col-sm-4 team-member">
+              <img src="images/seonghoo.jpg" class="img-circle" alt="Advisor Name">
+              <h4>Teo Troy Peng</h4>
+              <p class="text-muted">Radiation Oncology Instructor/Investigator<br>Northwestern Medicine</p>
+              <p>Providing clinical oversight and validation for case content.</p>
+          </div>
+
+          <div class="col-sm-4 team-member">
+            <img src="images/seonghoo.jpg" class="img-circle" alt="Advisor Name">
+            <h4>Rachel Gong</h4>
+            <p class="text-muted">MS Machine Learning and Data Science Student<br>Northwestern University</p>
+            <p>Providing clinical oversight and validation for case content.</p>
+        </div>
+
+        <div class="col-sm-4 team-member">
+            <img src="images/seonghoo.jpg" class="img-circle" alt="Advisor Name">
+            <h4>Shan Zhong</h4>
+            <p class="text-muted">MS Machine Learning and Data Science Student<br>Northwestern University</p>
+            <p>Providing clinical oversight and validation for case content.</p>
+        </div>
+
+        <div class="col-sm-4 team-member">
+            <img src="images/seonghoo.jpg" class="img-circle" alt="Advisor Name">
+            <h4>Mu He</h4>
+            <p class="text-muted">MS Machine Learning and Data Science Student<br>Northwestern University</p>
+            <p>Providing clinical oversight and validation for case content.</p>
+        </div>
+
+      </div>
+
+
+  </div> <footer class="text-center" style="padding: 40px; margin-top: 40px; border-top: 1px solid #eee;">
+      <p class="text-muted">&copy; 2025 RadOncAI Project. Not for actual medical diagnosis.</p>
+  </footer>
+
+  {% include 'components/chat-widget.html' %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+  <script src="{{ url_for('static', filename='config.js') }}"></script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
