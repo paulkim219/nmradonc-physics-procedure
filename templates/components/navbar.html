@@ -1,0 +1,78 @@
+<nav class="navbar navbar-default navbar-fixed-top floating-navbar">
+    <div class="container-fluid">
+      
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ url_for('index') }}">NU Rad Onc AI</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-centered">
+          
+          <li uib-dropdown>
+            <a href id="products-dropdown" uib-dropdown-toggle>
+              Products <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="products-dropdown">
+              <li><a href="#">Doctors</a></li>
+              <li><a href="#">Patients</a></li>
+              <li><a href="#">Students</a></li>
+              <li><a href="#">Nurses</a></li>
+              <li><a href="#">Physicians</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="{{ url_for('physicsprocedure') }}">Physics Procedure</a>
+          </li>
+
+          <li uib-dropdown>
+            <a href id="about-dropdown" uib-dropdown-toggle>
+              About Us <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="about-dropdown">
+              <li><a href="#">Our Story</a></li>
+              <li><a href="{{ url_for('aboutus') }}">About Us</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="{{ url_for('aimodel') }}">Our Model</a>
+          </li>
+
+          <!-- <li class="navbar-action-item">
+            <form class="navbar-form">
+              <button class="btn btn-danger" ng-click="vm.resetSession()">Reset Case</button>
+            </form>
+          </li> -->
+        </ul>
+
+        <p class="navbar-text navbar-centered-text hidden-xs">Radiation Oncology</p>
+
+        <ul class="nav navbar-nav navbar-right">
+          {% if 'user' in session %}
+            <li class="navbar-text" style="padding: 15px 15px; color: #777;">
+              <span class="hidden-xs">{{ session.user.email if session.user.email else 'User' }}</span>
+            </li>
+            <li>
+              <a href="{{ url_for('logout') }}" class="btn btn-default navbar-btn" style="margin-left: 10px;">
+                <span class="glyphicon glyphicon-log-out"></span> Logout
+              </a>
+            </li>
+          {% else %}
+            <li>
+              <a href="{{ url_for('login') }}" class="navbar-link">
+                <span class="glyphicon glyphicon-log-in"></span> Login
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+
+      </div>
+    </div>
+  </nav>

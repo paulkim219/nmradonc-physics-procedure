@@ -1,0 +1,118 @@
+/* Floating Centered Navbar */
+.floating-navbar {
+  top: 20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 90% !important;
+  max-width: 1200px !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background: #fff !important;
+  border: 1px solid #e0e0e0;
+  margin: 0 !important;
+}
+
+.floating-navbar .container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-navbar .navbar-collapse {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  padding-right: 120px; /* Reserve space for login button */
+}
+
+.floating-navbar .navbar-nav.navbar-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: none;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.floating-navbar .navbar-action-item {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.floating-navbar .navbar-action-item .navbar-form {
+  margin: 0;
+  padding: 0;
+}
+
+.floating-navbar .navbar-centered-text {
+  margin-left: 20px;
+  margin-right: 0;
+  float: none;
+  display: inline-block;
+  max-width: 200px; /* Prevent text from extending too far right */
+}
+
+.floating-navbar .navbar-header {
+  margin-right: 20px;
+}
+
+.floating-navbar .navbar-nav.navbar-right {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  z-index: 10;
+}
+
+.floating-navbar .navbar-nav.navbar-right .navbar-link {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  transition: color 0.2s;
+}
+
+.floating-navbar .navbar-nav.navbar-right .navbar-link:hover {
+  color: #667eea;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .floating-navbar {
+    max-width: 95%;
+    margin-top: 10px;
+  }
+  
+  .floating-navbar .navbar-nav.navbar-centered {
+    text-align: center;
+  }
+  
+  .floating-navbar .navbar-action-item {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  .floating-navbar .navbar-centered-text {
+    margin-left: 0;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    max-width: none;
+  }
+  
+  .floating-navbar .navbar-collapse {
+    padding-right: 0;
+  }
+  
+  .floating-navbar .navbar-nav.navbar-right {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
