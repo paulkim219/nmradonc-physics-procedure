@@ -1,0 +1,31 @@
+<div class="chat-widget" ng-controller="ExamController as vm">
+    <button class="chat-toggle-btn" ng-click="vm.toggleChat()" ng-hide="vm.isChatOpen">
+        <i class="glyphicon glyphicon-comment"></i> Chat
+    </button>
+
+    <div class="chat-popup" ng-show="vm.isChatOpen">
+        
+        <div class="chat-header" ng-click="vm.toggleChat()">
+            <span>Assistant</span>
+            <button class="close-btn">&times;</button>
+        </div>
+
+        <div class="chat-body">
+            {% raw %}
+            <div ng-repeat="entry in vm.chatHistory track by $index" class="message-bubble" ng-class="entry.role" ng-if="!entry.isLoading">
+                {{ entry.message }}
+            </div>
+            <div ng-if="vm.isLoading" class="thinking-indicator">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </div>
+            {% endraw %}
+        </div>
+
+        <form class="chat-footer" ng-submit="vm.sendChatMessage()">
+            <textarea ng-model="vm.chatMessage" placeholder="Type a message..." rows="2" 
+                      ng-keydown="vm.handleChatKeydown($event)"
+                      oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px';"></textarea>
+            <button type="submit" class="btn btn-sm btn-primary">Send</button>
+        </form>
+    </div>
+</div>

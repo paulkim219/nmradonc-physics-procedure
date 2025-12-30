@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" ng-app="radOncAIApp">
+<head>
+  <meta charset="utf-8">
+  <title>About - RadOncAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  
+  <style>
+      /* --- Shared Styles --- */
+      body { padding-top: 70px; color: #333; }
+      .navbar-brand { font-weight: bold; }
+
+      /* --- About Page Specific Styles --- */
+      .hero-section {
+          background-color: #f8f9fa;
+          padding: 40px 0;
+          margin-bottom: 40px;
+          border-bottom: 1px solid #e7e7e7;
+          text-align: center;
+      }
+      .hero-section h1 { margin-top: 0; color: #2c3e50; }
+      .hero-section .lead { color: #7f8c8d; }
+
+      .team-member { text-align: center; margin-bottom: 30px; }
+      .team-member img { 
+          width: 240px; 
+          height: 240px; 
+          margin-bottom: 15px; 
+          border: 3px solid #eee;
+
+          object-fit: cover; 
+          object-position: center top;
+      }
+      .team-member h4 { margin-bottom: 5px; font-weight: bold; }
+      .team-member .text-muted { font-size: 0.9em; }
+
+      .tech-stack {
+          background: #f0f4f8;
+          padding: 30px;
+          border-radius: 8px;
+          margin-top: 20px;
+      }
+  </style>
+</head>
+
+<body ng-controller="ExamController as vm">
+
+  {% include 'components/navbar.html' %}
+
+  <div class="hero-section">
+      <div class="container">
+          <h1>Bridging AI & Radiation Oncology</h1>
+          <p class="lead">A Northwestern University Practicum Project</p>
+      </div>
+  </div>
+
+  <div class="container">
+      
+      <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+              <h3>Our Mission</h3>
+              <p>
+                  With the rise of AI in healthcare, we believe that AI can be a powerful tool to help in all aspects of Radiation Oncology.
+                  By building a single platform where doctors, nurses, students, and patients can all interact, we can help streamline every process of Radiation Oncology with the power of AI.
+              </p>
+              <hr>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+              <h3>Our Offerings</h3>
+              <p>
+                  We are currently offering a single platform where doctors, physicians, nurses, students, and patients can all interact with the power of AI.
+              </p>
+              <ul>
+                <li><strong>Physicians:</strong> Our platform will allow physicians to ask questions about Radiation Oncology trials, where our AI will give back any guidelines and predicted outcomes of the different trials.</li>
+                <li><strong>Nurses:</strong> Our platform will be able to aid in question generation for our patients to help them understand their treatment better.</li>
+                <li><strong>Students:</strong> With our RAG database that contains all guidelines and trial outcomes about Radiation Oncology, students can take quizes to test their knowledge.</li>
+                <li><strong>Doctors:</strong> With their expertise, doctors will be able to see any respones from the AI and provide feedback to the AI to improve its accuracy.</li>
+                <li><strong>Patients:</strong> In coordination with Northwestern Medicine, our patients will be able to interact with AI to schedule appointments and answer any personalized questions about their treatment.</li>
+              </ul>
+          </div>
+      </div>
+
+      <hr>
+
+      
+
+      </div>
+
+  </div> <footer class="text-center" style="padding: 40px; margin-top: 40px; border-top: 1px solid #eee;">
+      <p class="text-muted">&copy; 2025 RadOncAI Project. Not for actual medical diagnosis.</p>
+  </footer>
+
+  {% include 'components/chat-widget.html' %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+  <script src="{{ url_for('static', filename='config.js') }}"></script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+/* Modular CSS Imports */
+/* Base styles */
+@import url('css/base.css');
+
+/* Components */
+@import url('css/components/buttons.css');
+@import url('css/components/forms.css');
+@import url('css/components/navbar.css');
+@import url('css/components/chat-widget.css');
+@import url('css/components/rating.css');
+
+/* Layouts */
+@import url('css/layouts/app-shell.css');
+@import url('css/layouts/students.css');
+@import url('css/layouts/landing.css');
+
+/* Note: CSS @import paths are relative to the styles.css file location in static/ */

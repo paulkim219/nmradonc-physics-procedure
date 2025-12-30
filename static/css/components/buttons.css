@@ -1,0 +1,30 @@
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.65rem 1.35rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #4a7cfb;
+  color: #fff;
+}
+
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid #8ea0c6;
+  color: #0a1f3f;
+}
+
+.btn.block {
+  width: 100%;
+  text-align: center;
+}
+

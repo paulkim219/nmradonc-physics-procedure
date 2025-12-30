@@ -1,0 +1,195 @@
+/* Landing Page Styles */
+.landing-hero {
+  background: linear-gradient(135deg, #4E2A84 0%, #6B3FA3 100%);
+  color: #fff;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+.landing-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+.landing-hero .subtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+.landing-hero .cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.landing-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+.landing-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #4E2A84;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(78, 42, 132, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e0d4f0;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(78, 42, 132, 0.12);
+}
+
+.feature-card .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #4E2A84;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+.feature-card p {
+  color: #5a657b;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+.feature-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.feature-card ul li {
+  padding: 0.5rem 0;
+  color: #5a657b;
+  padding-left: 1.5rem;
+  position: relative;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+.feature-card ul li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #6B3FA3;
+  font-weight: bold;
+}
+
+.benefits-section {
+  background: #f7f8fd;
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  margin: 4rem auto;
+  max-width: 1200px;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-item {
+  text-align: center;
+}
+
+.benefit-item .benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #6B3FA3;
+}
+
+.benefit-item h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #4E2A84;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+.benefit-item p {
+  color: #5a657b;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #6B3FA3 0%, #4E2A84 100%);
+  color: #fff;
+  padding: 4rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  margin: 4rem auto;
+  max-width: 1200px;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+.cta-section h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+.cta-section p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  font-family: var(--framer-font-family, "Geist", "Geist Placeholder", sans-serif);
+}
+
+@media (max-width: 768px) {
+  .landing-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .landing-hero .subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .landing-section h2 {
+    font-size: 2rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

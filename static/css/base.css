@@ -1,0 +1,36 @@
+:root {
+  --framer-font-family: "Geist", "Geist Placeholder", sans-serif;
+  font-family: var(--framer-font-family);
+  color: #0a1f3f;
+  background: #f3f6fb;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #eef2f8;
+  padding-top: 100px !important; /* Account for floating navbar */
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0 0 0.35rem;
+  line-height: 1.5;
+}
+
+header,
+main,
+section {
+  width: 100%;
+}
+
